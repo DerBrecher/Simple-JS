@@ -51,11 +51,36 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Build NodeJS') {
             steps {
-                echo 'Building..'
+                echo 'Building NodeJS..'
+                script {
+                    openshift.withCluster() {
+                        openshift.withProject() {
+                            sh 'mkdir target'
+                            sh 'cp -rf scripts/ target/'
+                            sh 'cp index.html target/index.html'
+                        }
+                    }
+                }
             }
         }
+
+        stage('Build Docker Container') {
+            steps {
+                echo 'Building Docker Container..'
+                script {
+                    openshift.withCluster() {
+                        openshift.withProject() {
+                            sh 'mkdir target'
+                            sh 'cp -rf scripts/ target/'
+                            sh 'cp index.html target/index.html'
+                        }
+                    }
+                }
+            }
+        }
+
         stage('Test') {
             steps {
                 echo 'Testing..'
