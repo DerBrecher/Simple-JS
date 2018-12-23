@@ -1,0 +1,15 @@
+kind : "BuildConfig"
+
+apiVersion: "v1"
+metadata:
+  name: "simple-js-builder"
+spec:
+  source:
+    git:
+      uri: "https://github.com/DerBrecher/Simple-JS.git"
+#    sourceSecret:
+#      name: "secret"
+  strategy:
+    jenkinsPipelineStrategy:
+      jenkinsfilePath: Jenkinsfile
+    type: JenkinsPipeline
