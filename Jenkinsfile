@@ -34,7 +34,6 @@ pipeline {
                                openshift.selector("secrets", templateName).delete()                            
                             }
                             sh 'ls'
-                            sh 
                         }
                     }
                 }
