@@ -1,5 +1,4 @@
 #!/usr/bin/env groovy
-#branch Test
 
 def templatePath = 'https://raw.githubusercontent.com/DerBrecher/Simple-JS/master/template.json' 
 def templateName = 'frontend'
