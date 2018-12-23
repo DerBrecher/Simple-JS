@@ -72,9 +72,6 @@ pipeline {
                 script {
                     openshift.withCluster() {
                         openshift.withProject() {
-                            sh 'mkdir target'
-                            sh 'cp -rf scripts/ target/'
-                            sh 'cp index.html target/index.html'
                             def app = docker.build("frontend-httpd")
                         }
                     }
