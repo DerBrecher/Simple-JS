@@ -8,7 +8,7 @@ spec:
     git:
       uri: "https://git-codecommit.eu-central-1.amazonaws.com/v1/repos/trackntrace-Frontend"
       ref: "BuildonOKD"
-   sourceSecret:
+    sourceSecret:
       name: "aws"
   strategy:
     jenkinsPipelineStrategy:
